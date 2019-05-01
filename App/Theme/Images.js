@@ -4,4 +4,4 @@
 
 export default {
   logo: require('App/Images/TOM.png'),
-}
+};

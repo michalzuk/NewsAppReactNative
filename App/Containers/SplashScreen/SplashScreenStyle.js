@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native'
-import Colors from 'App/Theme/Colors'
-import ApplicationStyles from 'App/Theme/ApplicationStyles'
+import { StyleSheet } from 'react-native';
+import Colors from 'App/Theme/Colors';
+import ApplicationStyles from 'App/Theme/ApplicationStyles';
 
 export default StyleSheet.create({
   container: {
@@ -18,4 +18,4 @@ export default StyleSheet.create({
     width: 70,
     backgroundColor: 'white',
   },
-})
+});
