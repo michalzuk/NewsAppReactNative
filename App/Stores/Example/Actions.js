@@ -1,4 +1,4 @@
-import { createActions } from 'reduxsauce'
+import { createActions } from 'reduxsauce';
 
 /**
  * We use reduxsauce's `createActions()` helper to easily create redux actions.
@@ -8,7 +8,7 @@ import { createActions } from 'reduxsauce'
  * Action names are turned to SNAKE_CASE into the `Types` variable. This can be used
  * to listen to actions:
  *
- * - to trigger reducers to update the state, for example in App/Stores/Example/Reducers.js
+ * - to trigger reducers to update the state, for example in App/Stores/HomeScreen/Reducers.js
  * - to trigger sagas, for example in App/Sagas/index.js
  *
  * Actions can be dispatched:
@@ -27,7 +27,7 @@ const { Types, Creators } = createActions({
   fetchUserSuccess: ['user'],
   // An error occurred
   fetchUserFailure: ['errorMessage'],
-})
+});
 
-export const ExampleTypes = Types
-export default Creators
+export const ExampleTypes = Types;
+export default Creators;
