@@ -13,7 +13,7 @@ class ExampleScreen extends React.Component {
   render() {
     return (
       <View>
-        <Text>XD</Text>
+        <Text>NewsApp</Text>
       </View>
     );
   }

@@ -6,9 +6,7 @@ export default class SplashScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.logo}>
-          <Text>XDDDDDDDD</Text>
-        </View>
+        <Text>Splash Screen</Text>
       </View>
     );
   }
