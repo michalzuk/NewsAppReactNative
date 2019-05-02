@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "apisauce": "^1.0.2",
+    "axios": "^0.18.0",
     "i18n-js": "^3.2.1",
     "prop-types": "^15.7.2",
     "react": "16.8.3",
@@ -23,6 +24,7 @@
     "react-navigation": "^3.6.0",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-saga": "^1.0.2",
     "reduxsauce": "^1.0.1"
@@ -47,7 +49,8 @@
     "metro-react-native-babel-preset": "^0.53.1",
     "prettier": "^1.16.4",
     "react-native-rename": "^2.4.1",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "redux-devtools-extension": "^2.13.8"
   },
   "jest": {
     "preset": "react-native",

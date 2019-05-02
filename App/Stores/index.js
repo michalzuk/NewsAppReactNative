@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
 import configureStore from './CreateStore';
+import { combineReducers } from 'redux';
 import rootSaga from 'App/Sagas';
 import { reducer as ExampleReducer } from './Example/Reducers';
 

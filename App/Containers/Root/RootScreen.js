@@ -8,10 +8,6 @@ import StartupActions from 'App/Stores/Startup/Actions';
 import { PropTypes } from 'prop-types';
 
 class RootScreen extends Component {
-  componentDidMount() {
-    this.props.startup();
-  }
-
   render() {
     return (
       <View style={styles.container}>
