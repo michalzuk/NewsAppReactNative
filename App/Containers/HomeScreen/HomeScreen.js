@@ -1,20 +1,44 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import ExampleActions from 'App/Stores/Example/Actions';
 import { liveInEurope } from 'App/Stores/Example/Selectors';
+import { BottomNavigation } from 'react-native-paper';
+import FeedScreen from '../FeedScreen';
+import SearchScreen from '../SearchScreen/SearchScreen';
+import SettingsScreen from '../SettingsScreen/SettingsScreen';
+import { Colors } from '../../Theme/index';
+import styles from './HomeScreenStyle';
 
-class HomeScreen extends React.Component {
-  componentDidMount() {
-    this.props.fetchUser();
-  }
+class HomeScreen extends Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: 'feed', title: 'Feed', icon: 'album', color: Colors.primary },
+      { key: 'search', title: 'Search', icon: 'album', color: Colors.success },
+      { key: 'settings', title: 'Settings', icon: 'album', color: Colors.text },
+    ],
+  };
 
+  _handleIndexChange = index => this.setState({ index });
+
+  _renderScene = BottomNavigation.SceneMap({
+    feed: FeedScreen,
+    search: SearchScreen,
+    settings: SettingsScreen,
+  });
   render() {
     return (
-      <View>
-        <Text>Main</Text>
-      </View>
+      <BottomNavigation
+        shifting
+        barStyle={styles.barStyle}
+        style={styles.barStyle}
+        activeColor={Colors.white}
+        inactiveColor={Colors.grey}
+        navigationState={this.state}
+        onIndexChange={this._handleIndexChange}
+        renderScene={this._renderScene}
+      />
     );
   }
 }

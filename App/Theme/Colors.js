@@ -7,6 +7,9 @@
 
 export default {
   transparent: 'rgba(0,0,0,0)',
+  white: '#fff',
+  black: '#000',
+  grey: '#888',
   // HomeScreen colors:
   text: '#212529',
   primary: '#007bff',
