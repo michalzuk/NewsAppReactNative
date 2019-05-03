@@ -30,7 +30,10 @@ export default (rootReducer, rootSaga) => {
 
   // Connect the sagas to the redux store
   const sagaMiddleware = createSagaMiddleware();
-  middleware.push(logger);
+
+  if (process.env.NODE_ENV !== 'production') {
+    middleware.push(logger);
+  }
   middleware.push(sagaMiddleware);
 
   enhancers.push(applyMiddleware(...middleware));
