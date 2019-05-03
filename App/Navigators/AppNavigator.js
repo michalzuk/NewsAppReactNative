@@ -6,7 +6,7 @@ import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
 const StackNavigator = createStackNavigator(
   {
     SplashScreen: SplashScreen,
-    MainScreen: HomeScreen,
+    HomeScreen: HomeScreen,
   },
   {
     initialRouteName: 'SplashScreen',
