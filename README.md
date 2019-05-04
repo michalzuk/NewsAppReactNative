@@ -56,9 +56,9 @@ The boilerplate includes an example (displaying fake user data) from UI componen
 - [`App/Containers`](App/Containers): container components, i.e. the application's screens
 - [`App/Images`](App/Images): images used by the application
 - [`App/Navigators`](App/Navigators): react navigation navigators 
-- [`App/Sagas`](App/Sagas): redux sagas
+- [`App/Sagas`](App/Store/Sagas): redux sagas
 - [`App/Services`](App/Services): application services, e.g. API clients
-- [`App/Stores`](App/Stores): redux [actions, reducers and stores](https://redux.js.org/basics)
+- [`App/Stores`](App/Store): redux [actions, reducers and stores](https://redux.js.org/basics)
 - [`App/Theme`](App/Theme): base styles for the application
 
 For more information on each directory, click the link and read the directory's README.

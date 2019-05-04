@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
-import ExampleActions from 'App/Stores/Example/Actions';
-import { liveInEurope } from 'App/Stores/Example/Selectors';
 import { BottomNavigation } from 'react-native-paper';
 import FeedScreen from '../FeedScreen';
 import SearchScreen from '../SearchScreen/SearchScreen';
@@ -44,24 +41,11 @@ class HomeScreen extends Component {
   }
 }
 
-HomeScreen.propTypes = {
-  user: PropTypes.object,
-  userIsLoading: PropTypes.bool,
-  userErrorMessage: PropTypes.string,
-  fetchUser: PropTypes.func,
-  liveInEurope: PropTypes.bool,
-};
+HomeScreen.propTypes = {};
 
-const mapStateToProps = state => ({
-  user: state.example.user,
-  userIsLoading: state.example.userIsLoading,
-  userErrorMessage: state.example.userErrorMessage,
-  liveInEurope: liveInEurope(state),
-});
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = dispatch => ({
-  fetchUser: () => dispatch(ExampleActions.fetchUser()),
-});
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(
   mapStateToProps,
