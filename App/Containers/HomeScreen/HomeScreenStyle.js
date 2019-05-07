@@ -1,8 +1,13 @@
 import { StyleSheet } from 'react-native';
+import { Colors } from '../../Theme';
 
 export default StyleSheet.create({
   barStyle: {
-    color: '#fff',
-    fontSize: 20,
+    backgroundColor: Colors.black,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  container: {
+    flex: 1,
   },
 });
