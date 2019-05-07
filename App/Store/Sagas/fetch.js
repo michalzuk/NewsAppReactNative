@@ -1,22 +1,20 @@
 import { put, call } from 'redux-saga/effects';
-import { TEST_FETCH_SUCCESS, TEST_FETCH_FAILURE } from '../Actions/actionTypes';
+import { FETCH_TOP_HEADLINES_SUCCESS, FETCH_TOP_HEADLINES_FAILURE } from '../Actions/actionTypes';
 import axios from 'axios';
 
 const API_ROOT = 'https://newsapi.org/v2/';
 const API_KEY = '366b83c4663941828f0e1b007e88125a';
 
 function fetchRequestData() {
-  axios
-    .get(`${API_ROOT}everything?q=bitcoin&from=2019-04-03&sortBy=publishedAt&apiKey=${API_KEY}`)
-    .then(response => console.log(response));
+  return axios.get(`${API_ROOT}top-headlines?country=us&apiKey=${API_KEY}`);
 }
 
-export function* fetchData(action) {
+export function* fetchData() {
   try {
     let response = yield call(fetchRequestData);
 
-    yield put({ type: TEST_FETCH_SUCCESS, payload: response });
+    yield put({ type: FETCH_TOP_HEADLINES_SUCCESS, payload: response });
   } catch (e) {
-    yield put({ type: TEST_FETCH_FAILURE, payload: e });
+    yield put({ type: FETCH_TOP_HEADLINES_FAILURE, payload: e });
   }
 }

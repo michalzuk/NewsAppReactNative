@@ -1,4 +1,4 @@
-import { TEST_FETCH, TEST_FETCH_SUCCESS, TEST_FETCH_FAILURE } from '../Actions/actionTypes';
+import { FETCH_TOP_HEADLINES, FETCH_TOP_HEADLINES_SUCCESS, FETCH_TOP_HEADLINES_FAILURE } from '../Actions/actionTypes';
 
 const initialState = {
   data: {},
@@ -8,18 +8,18 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case TEST_FETCH:
+    case FETCH_TOP_HEADLINES:
       return {
         ...state,
         loading: true,
       };
-    case TEST_FETCH_SUCCESS:
+    case FETCH_TOP_HEADLINES_SUCCESS:
       return {
         ...state,
-        data: { ...action.payload },
+        data: { ...action.payload.data },
         loading: false,
       };
-    case TEST_FETCH_FAILURE:
+    case FETCH_TOP_HEADLINES_FAILURE:
       return {
         ...state,
         loading: false,

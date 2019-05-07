@@ -1,7 +1,7 @@
 import configureStore from './CreateStore';
 import { combineReducers } from 'redux';
 import rootSaga from 'App/Store/Sagas';
-import fetch from './Reducers/fetch';
+import topHeadlines from './Reducers/topHeadlines';
 
 export default () => {
   const rootReducer = combineReducers({
@@ -9,7 +9,7 @@ export default () => {
      * Register your reducers here.
      * @see https://redux.js.org/api-reference/combinereducers
      */
-    fetch,
+    topHeadlines,
   });
 
   return configureStore(rootReducer, rootSaga);
