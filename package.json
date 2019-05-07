@@ -63,5 +63,10 @@
     "setupFiles": [
       "./jest.setup.js"
     ]
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
   }
 }

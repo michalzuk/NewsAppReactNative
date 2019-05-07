@@ -7,4 +7,10 @@ export default {
     primary: '#FFF',
     accent: '#f11',
   },
+  fonts: {
+    regular: 'OpenSans-ExtraBold',
+    medium: 'OpenSans-Regular',
+    light: 'OpenSans-Light',
+    thin: 'OpenSans-Light',
+  },
 };
