@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import PageHeader from '../../Components/PageHeader/PageHeader';
 import PropTypes from 'prop-types';
 
-class SearchScreen extends Component {
+class CategoryScreen extends Component {
   render() {
     return (
       <View>
@@ -13,9 +13,10 @@ class SearchScreen extends Component {
   }
 }
 
-SearchScreen.propTypes = {
+CategoryScreen.propTypes = {
   route: PropTypes.shape({
     key: PropTypes.string.isRequired,
   }),
 };
-export default SearchScreen;
+
+export default CategoryScreen;
