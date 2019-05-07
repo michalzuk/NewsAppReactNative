@@ -10,6 +10,8 @@ export default {
   white: '#fff',
   black: '#000',
   grey: '#888',
+  lightGrey: '#bbb',
+  red: '#f00',
   // HomeScreen colors:
   text: '#212529',
   primary: '#007bff',
