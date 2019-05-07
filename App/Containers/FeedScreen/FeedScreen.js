@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, RefreshControl } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SingleArticle from '../../Components/SingleArticle/SingleArticle';
 import PageHeader from '../../Components/PageHeader/PageHeader';
+import { testRequest } from '../../Store/Actions/topHeadlines';
 
 class FeedScreen extends Component {
+  state = {
+    refreshing: false,
+  };
+
+  handleRefresh = () => {
+    this.props.fetchTopHeadlines();
+  };
+
   render() {
     return (
-      <ScrollView>
+      <ScrollView
+        refreshControl={<RefreshControl refreshing={this.props.topHeadlines.loading} onRefresh={this.handleRefresh} />}
+      >
         <PageHeader route={this.props.route.key} />
         {this.props.articles.map((article, index) => {
-          console.log(article);
           return (
             <SingleArticle
               key={index}
@@ -30,6 +40,7 @@ class FeedScreen extends Component {
 }
 
 FeedScreen.propTypes = {
+  fetchTopHeadlines: PropTypes.func,
   topHeadlines: PropTypes.object,
   articles: PropTypes.array,
   route: PropTypes.shape({
@@ -45,4 +56,11 @@ const mapStateToProps = state => ({
   articles: state.topHeadlines.data.articles,
 });
 
-export default connect(mapStateToProps)(FeedScreen);
+const mapDispatchToProps = dispatch => ({
+  fetchTopHeadlines: () => dispatch(testRequest()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FeedScreen);
