@@ -1,6 +1,7 @@
 {
   "navigation": {
     "feed": "Feed",
+    "newsByCategory": "News by category",
     "search": "Search",
     "settings": "Settings"
   }
