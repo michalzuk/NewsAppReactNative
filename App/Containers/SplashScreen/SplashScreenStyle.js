@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
-import Colors from 'App/Theme/Colors';
-import ApplicationStyles from 'App/Theme/ApplicationStyles';
+import Colors from '../../Theme/Colors';
+import ApplicationStyles from '../../Theme/ApplicationStyles';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 export default StyleSheet.create({
   container: {
@@ -8,14 +9,10 @@ export default StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.black,
   },
   logo: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: 70,
-    width: 70,
-    backgroundColor: 'white',
+    resizeMode: 'contain',
+    width: wp(90),
   },
 });
