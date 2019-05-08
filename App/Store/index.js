@@ -1,6 +1,6 @@
 import configureStore from './CreateStore';
 import { combineReducers } from 'redux';
-import rootSaga from 'App/Store/Sagas';
+import rootSaga from '../Store/Sagas';
 import topHeadlines from './Reducers/topHeadlines';
 
 export default () => {

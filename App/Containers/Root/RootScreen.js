@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import NavigationService from 'App/Services/NavigationService';
-import AppNavigator from 'App/Navigators/AppNavigator';
+import NavigationService from '../../Services/NavigationService';
+import AppNavigator from '../../Navigators/AppNavigator';
 import { View } from 'react-native';
 import styles from './RootScreenStyle';
 import { connect } from 'react-redux';
