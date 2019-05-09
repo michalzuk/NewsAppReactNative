@@ -1,4 +1,4 @@
-package com.newsappreactnative;
+package com.newsider;
 
 import android.app.Application;
 
