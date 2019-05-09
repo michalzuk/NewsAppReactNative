@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import NavigationService from 'App/Services/NavigationService';
-import AppNavigator from 'App/Navigators/AppNavigator';
+import NavigationService from '../../Services/NavigationService';
+import AppNavigator from '../../Navigators/AppNavigator';
 import { View } from 'react-native';
 import styles from './RootScreenStyle';
 import { connect } from 'react-redux';
-import StartupActions from 'App/Stores/Startup/Actions';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
+import { testRequest } from '../../Store/Actions/topHeadlines';
 
 class RootScreen extends Component {
+  componentDidMount() {
+    this.props.testRequest();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -22,16 +26,14 @@ class RootScreen extends Component {
 }
 
 RootScreen.propTypes = {
-  startup: PropTypes.func,
+  testRequest: PropTypes.func,
 };
 
-const mapStateToProps = state => ({});
-
 const mapDispatchToProps = dispatch => ({
-  startup: () => dispatch(StartupActions.startup()),
+  testRequest: () => dispatch(testRequest()),
 });
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(RootScreen);

@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { PropTypes } from 'prop-types';
-import ExampleActions from 'App/Stores/Example/Actions';
-import { liveInEurope } from 'App/Stores/Example/Selectors';
+import { View } from 'react-native';
 import { BottomNavigation } from 'react-native-paper';
-import FeedScreen from '../FeedScreen';
+import FeedScreen from '../FeedScreen/FeedScreen';
 import SearchScreen from '../SearchScreen/SearchScreen';
 import SettingsScreen from '../SettingsScreen/SettingsScreen';
-import { Colors } from '../../Theme/index';
+import { Colors } from '../../Theme';
 import styles from './HomeScreenStyle';
+import i18n from '../../Locales/i18n';
+import CategoryScreen from '../CategoryScreen/CategoryScreen';
 
 class HomeScreen extends Component {
   state = {
     index: 0,
     routes: [
-      { key: 'feed', title: 'Feed', icon: 'album', color: Colors.primary },
-      { key: 'search', title: 'Search', icon: 'album', color: Colors.success },
-      { key: 'settings', title: 'Settings', icon: 'album', color: Colors.text },
+      { key: 'feed', title: i18n.t('navigation.feed'), icon: 'whatshot' },
+      { key: 'newsByCategory', title: i18n.t('navigation.newsByCategory'), icon: 'view-list' },
+      { key: 'search', title: i18n.t('navigation.search'), icon: 'search' },
+      { key: 'settings', title: i18n.t('navigation.settings'), icon: 'settings' },
     ],
   };
 
@@ -24,45 +24,25 @@ class HomeScreen extends Component {
 
   _renderScene = BottomNavigation.SceneMap({
     feed: FeedScreen,
+    newsByCategory: CategoryScreen,
     search: SearchScreen,
     settings: SettingsScreen,
   });
   render() {
     return (
-      <BottomNavigation
-        shifting
-        barStyle={styles.barStyle}
-        style={styles.barStyle}
-        activeColor={Colors.white}
-        inactiveColor={Colors.grey}
-        navigationState={this.state}
-        onIndexChange={this._handleIndexChange}
-        renderScene={this._renderScene}
-      />
+      <View style={styles.container}>
+        <BottomNavigation
+          labeled={false}
+          barStyle={styles.barStyle}
+          activeColor={Colors.red}
+          inactiveColor={Colors.grey}
+          navigationState={this.state}
+          onIndexChange={this._handleIndexChange}
+          renderScene={this._renderScene}
+        />
+      </View>
     );
   }
 }
 
-HomeScreen.propTypes = {
-  user: PropTypes.object,
-  userIsLoading: PropTypes.bool,
-  userErrorMessage: PropTypes.string,
-  fetchUser: PropTypes.func,
-  liveInEurope: PropTypes.bool,
-};
-
-const mapStateToProps = state => ({
-  user: state.example.user,
-  userIsLoading: state.example.userIsLoading,
-  userErrorMessage: state.example.userErrorMessage,
-  liveInEurope: liveInEurope(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-  fetchUser: () => dispatch(ExampleActions.fetchUser()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeScreen);
+export default HomeScreen;
